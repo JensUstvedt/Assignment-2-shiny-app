@@ -13,6 +13,9 @@ ui <- fluidPage(
   checkboxGroupInput("model", "Select model(s) to display:",
                      choices = c("von Bertalanffy", "Gompertz"),
                      selected = c("von Bertalanffy", "Gompertz"))
+  #checkboxGroupInput("data", "Select example data to display:",
+                    # choises = c(),
+                    # selected = c())
   ),
   mainPanel(plotOutput("plot"))
 ))
@@ -28,16 +31,19 @@ server <- function(input, output) {
     VB <- Linf * (1 - exp(-k * (t - t0)))
     Gomp <- Linf * exp(-(1/k) * exp(-k * (t - t0)))
     
-    if(any(input$model == "von Bertalanffy")) {
-      
-    }
-    if(any(input$model == "Gompertz")){
     
-    }
-  
-
+    if(all(c("von Bertalanffy", "Gompertz") %in% input$model)) {
+      plot(t, VB, type = "l")
+      lines(t, Gomp)
+    } else if("Gompertz" %in% input$model){
+      plot(t, Gomp, type = "l")
+    } else if("von Bertalanffy" %in% input$model){
+      plot(t, VB, type = "l")
+    } else{plot.new()
+           text(0.5, 0.5, "Please select at least one model")}
+      
   }
-)
+  )
 }
 
 shinyApp(ui = ui, server = server)
