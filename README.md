@@ -1,30 +1,28 @@
 #von Bertalanffy and Gompertz growth equation comparison
 
-This app is created as a tool to visualize and investigate the differences between two commonly used growth models used to describe age and length relationships in fish, the von Bertalanffy and Gompertz models.
-The app allows investigation as to how the parameters alters the shape of the growth curve, and the relationship between the parameters.
-The app can be used as an educational tool, to understand the mechanisms between model parameters, and translate this information to a biological context. 
+This app is designed as a tool to visualize and explore the differences between two commonly used growth models for describing age-length relationships in fish; the von Bertalanffy and Gompertz models.
+It enables users to see how changes in model parameters affect the shape of the growth curve, and how the parameters relate to each other.
+The app serves as an educational resource for understanding the mechanisms between model parameters, and translate this information to a biological context. 
+The comparison of the two models for 2 different example species demonstrate the importance of model choice and its relation biological interspecific variability. 
 
-#Content of the app
+#Features
 -Plot with either one or both growth functions
--2 example datasets, which could be replaced by the users own data by loading the data to the script, and modifying plots slightly. 
--3 sliders, that allow adjustment of the three parameters used in von Bertalanffy and this version of Gompertz:
+-Inclusion of 2 example species datasets, blue whiting and Blue catfish
+   -These can be replaced by your own data by loading it to the script, and modifying the code for the plots slightly. 
+-interactive sliders, that allow adjustment of the three parameters used in the models
   -Linf (Asymptotic maksimum length)
   -k (Growth coeffisient)
   -t0 (hypothetical age at length = 0)
--Dynamic display of the two functions
+-Dynamic display of the model functions
 
 
 #How to use the app
--Download rep (both the script and the data in data-folder should be downloaded) 
--Make sure all packages are installed before calling packages:
-  -library(shiny)
-  -library(shiny)
-  -library(bslib)
-  -library(readxl)
-  -library(here)
-  -library(tidyverse)
-  -library(FSAdata)
--Open script in RStudio, and run shinyApp(ui = ui, server = server)
+-Download repository, including both the script and the data folder
+-Install all packages, if not already installed:
+<pre> ```r install.packages(c("shiny", "tidyverse", "bslib", "readxl", "here", "FSAdata"))``` </pre>
+-Open script in RStudio
+-Run the app using:
+<pre> ```r shinyApp(ui = ui, server = server)``` </pre>
 -The app will open in browser
 -Select which growth equations and example data you want to include
 -Adjust model parameters to alter model fit
