@@ -10,8 +10,8 @@ The comparison of the two models for 2 different example species demonstrate the
 -Inclusion of 2 example species datasets, blue whiting and Blue catfish
    -These can be replaced by your own data by loading it to the script, and modifying the code for the plots slightly. 
 -interactive sliders, that allow adjustment of the three parameters used in the models
-  -Linf (Asymptotic maksimum length)
-  -k (Growth coeffisient)
+  -Linf (Asymptotic maximum length)
+  -k (Growth coefficient)
   -t0 (hypothetical age at length = 0)
 -Dynamic display of the model functions
 

@@ -36,7 +36,7 @@ server <- function(input, output) {
     select(length, age) #In this section you can replace the blue whiting data with your own data. Make sure length and age are column names in your data.
   blue_catfish_data <- get("BlueCatfish") #Blue catfish data is from the FSAdata package. 
   
-  #These datasets are good examples because they display different growths, making for good display of why model choice is important and should be adjusted to species
+  #These datasets are good examples because they display different growth patterns, making for good display of why model choice is important and should be adjusted to species
   
   output$plot <- renderPlot({
     Linf <- input$Linf #Creating objects for the growth functions
@@ -81,7 +81,7 @@ server <- function(input, output) {
       points(blue_catfish_data$age, blue_catfish_data$tl, col = "darkgreen", pch = 19) #make sure all cases of species name is replaced with your own, if using your own data
     }else if("Blue whiting" %in% input$data){ #Plots only blue whiting data if only blue whiting is selected
       points(bw_data$age, bw_data$length, col = "blue", pch =19)
-    } else if("Blue catfish" %in% input$data){ #Plots onlye blue catfish data if only blue catfish is selected
+    } else if("Blue catfish" %in% input$data){ #Plots only blue catfish data if only blue catfish is selected
       points(blue_catfish_data$age, blue_catfish_data$tl, col = "darkgreen", pch = 19)
     }
     #Did not add any specific message if no example data is selected as this is a viable option. 
